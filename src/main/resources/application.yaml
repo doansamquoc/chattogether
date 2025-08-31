@@ -21,9 +21,9 @@ spring:
                         token-uri: https://oauth2.googleapis.com/token
                         user-info-uri: https://www.googleapis.com/oauth2/v2/userinfo
     datasource:
-        url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
-        username: ${DB_USER}
-        password: ${DB_PASS}
+        url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:chattogether}
+        username: ${DB_USER:root}
+        password: ${DB_PASS:}
         driver-class-name: com.mysql.cj.jdbc.Driver
     web:
         resources:
