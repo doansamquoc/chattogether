@@ -50,3 +50,8 @@ logging:
             type:
                 descriptor:
                     BasicBinder: TRACE
+
+jwt:
+    secret: ${APP_JWT_SECRET_KEY:default_secret_key_chat_together}
+    access-token-expiration: 900000 # 15 minutes
+    refresh-token-expiration: 604800000 # One week
