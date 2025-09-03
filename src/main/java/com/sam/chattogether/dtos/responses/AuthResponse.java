@@ -1,16 +1,13 @@
 package com.sam.chattogether.dtos.responses;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.FieldDefaults;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class AuthResponse {
-    String accessToken;
-    String refreshToken;
+	String accessToken;
+	String refreshToken;
+
+	public AuthResponse(String accessToken, String refreshToken) {
+		super();
+		this.accessToken = accessToken;
+		this.refreshToken = refreshToken;
+	}
+
 }

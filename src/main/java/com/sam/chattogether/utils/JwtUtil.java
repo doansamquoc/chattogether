@@ -9,20 +9,17 @@ import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import lombok.AccessLevel;
-import lombok.experimental.FieldDefaults;
 
 @Component
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class JwtUtil {
     @Value("${jwt.secret}")
-    String secret;
+    private String secret;
 
     @Value("${jwt.access-token-expiration}")
-    long accessTokenExpiration;
+    private long accessTokenExpiration;
 
     @Value("${jwt.refresh-token-expiration}")
-    long refreshTokenExpiration;
+    private long refreshTokenExpiration;
 
     public String generateAccessToken(UserDetails user) {
         return Jwts.builder()
